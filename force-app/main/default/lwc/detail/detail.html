@@ -1,0 +1,35 @@
+<template>
+    <template if:true={show}>
+        <template if:false={showCompare}>
+            <div class="content">
+                <div class="first">
+                    <h1 style="margin-left: 10px;">Detail page for {product.Name}</h1>
+                    <template if:true={list}>
+                        <lightning-button onclick={handleBack} variant="brand" label="Back" title="Back"></lightning-button>
+                    </template>
+                    <lightning-button onclick={onBuy} variant="success" label="Buy" title="Buy"></lightning-button>
+                    <template if:true={list}>
+                        <lightning-button onclick={onShowCompare} variant="success" label="Compare" title="Compare"></lightning-button>
+                    </template>
+                </div>
+                <div class="items">
+                    <p class="max"></p>
+                    <p class="max">Name: {product.Name}</p>
+                    <p class="max">Description: {product.Description}</p>
+                    <!--<p class="max">{product.Image__c}</p>-->
+                    <p class="max">Price: {product.Price__c}</p>
+                    <p class="max">Quantity: {product.Quantity__c}</p>
+                    <p class="max">Color: {product.Color__c}</p>
+                    <p class="max">Dimension: {product.Dimension__c}</p>
+                    <p class="max">Rating: {product.Rating__c}</p>
+                    <p class="max">Size: {product.Size__c}</p>
+                </div>
+            </div>
+        </template>
+        <template if:true={showCompare}>
+            <div class="content1">
+                <c-compare id1={id1} id2={id2} id3={id3} ongoback={handleGoBack2}></c-compare>
+            </div>
+        </template>
+    </template>
+</template>

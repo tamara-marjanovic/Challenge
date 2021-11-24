@@ -1,0 +1,41 @@
+<template>
+    <template if:false={showDetail}>
+        <template if:false={showCompare}>
+            <div class="content">
+                <div class="first">
+                    <h1 style="margin-left: 10px;">List of products: </h1>
+                    <lightning-button onclick={onBuy} variant="success" label="Buy" title="Buy"></lightning-button>
+                    <lightning-button onclick={onShowCompare} variant="success" label="Compare" title="Compare"></lightning-button>
+                </div>
+                <div class="item">
+                    <p class="max"></p>
+                    <p class="max">Name:</p>
+                    <p class="max">Description:</p>
+                    <!--<p class="max">Image:</p>-->
+                    <p class="max">Price:</p>
+                </div>
+                <div class="items">
+                    <template for:each={lista} for:item="x">
+                        <div key={x.id} class="item" data-id={x.Id}>
+                            <lightning-input class="checkboxc" type="checkbox" onclick={handleOnClickCheckBox} data-id={x.Id}></lightning-input>
+                            <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Name}</p>
+                            <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Description}</p>
+                            <!--<p class="pclass" onclick={showDetail} data-id={x.Id}>{x.Image__c}</p>-->
+                            <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Price__c}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </template>
+    <template if:true={showDetail}>
+        <div class="content1">
+            <c-detail id-detail={idDetail}  ongoback={handleGoBack} list="true"></c-detail>
+        </div>
+    </template>
+    <template if:true={showCompare}>
+        <div class="content1">
+            <c-compare id1={id1} id2={id2} id3={id3} ongoback={handleGoBack2}></c-compare>
+        </div>
+    </template>
+</template>

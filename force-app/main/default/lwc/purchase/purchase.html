@@ -1,0 +1,26 @@
+<template>
+    <div class="content">
+        <div class="first">
+            <h1 style="margin-left: 10px;">List of purchases: </h1>
+            <lightning-button onclick={onBuy} variant="success" label="Buy" title="Buy"></lightning-button>
+            <lightning-button onclick={onEmpty} variant="destructive" label="Empty" title="Empty"></lightning-button>
+        </div>
+        <div class="item">
+            <p class="max">Name:</p>
+            <p class="max">Num:</p>
+            <p class="max">Price:</p>
+        </div>
+        <div class="items">
+            <template for:each={lista} for:item="x">
+                <div key={x.id} class="item" data-id={x.Id}>
+                    <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Name}</p>
+                    <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Num__c}</p>
+                    <p class="pclass" onclick={onShowDetail} data-id={x.Id}>{x.Price__c}</p>
+                </div>
+            </template>
+        </div>
+        <div class="last">
+            <h1 style="margin-left: 10px;">Total: {total}</h1>
+        </div>
+    </div>
+</template>

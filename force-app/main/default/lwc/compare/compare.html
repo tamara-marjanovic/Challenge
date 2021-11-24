@@ -1,0 +1,13 @@
+<template>
+        <div class="content">
+            <div class="first">
+                <h1 style="margin-left: 10px;">Comparing three products</h1>
+                <lightning-button onclick={handleBack} variant="brand" label="Back" title="Back"></lightning-button>
+            </div>
+            <div class="content1">
+                <c-detail id-detail={id1}  ongoback={handleGoBack} class="max"></c-detail>
+                <c-detail id-detail={id2}  ongoback={handleGoBack} class="max"></c-detail>
+                <c-detail id-detail={id3}  ongoback={handleGoBack} class="max"></c-detail>
+            </div>
+        </div>
+</template>

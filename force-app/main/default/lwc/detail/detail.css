@@ -1,0 +1,46 @@
+div.content {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    align-items: start ;
+    justify-items: start;
+  }
+
+  .first{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 79% 5% 5% 11%;
+    align-items: center ;
+    justify-items: start;
+  }
+
+  .btn{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  div.items {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow: auto;
+    display: grid;
+    grid-template-rows: repeat(10,6.666%);
+    align-items: start ;
+    justify-items: start;
+  }
+
+  .max{
+    margin-left: 10px;
+    height: 100%;
+  }
+  
+  .content1{
+    height: 100%;
+    width: 100%;
+  }
